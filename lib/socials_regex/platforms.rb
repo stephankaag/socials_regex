@@ -243,7 +243,7 @@ module SocialsRegex
       # Allowed for usernames are letters, numbers, underscores.
       # http://pinterest.com/talaatmagdyx
       # https://it.pinterest.com/talaatmagdyx
-      user: %r{(?:https?:)?//(?:[A-Za-z]+\.)?pinterest\.com/(?<username>[A-Za-z0-9_]+)/?}
+      user: %r{(?:https?:)?//(?:[A-Za-z]+\.)?pinterest\.(?:\w+(\.\w+)*)/(?<username>[A-Za-z0-9_]+)/?}
     }.freeze
 
     def self.match?(input_str:, regex:)

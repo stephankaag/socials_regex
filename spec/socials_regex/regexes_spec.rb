@@ -483,7 +483,7 @@ RSpec.describe SocialsRegex::Regexes do
         expect(described_class.match?(input_str: 'https://it.pinterest.com/brouwersanitairnl/',
                                       regex: SocialsRegex::Regexes::PINTEREST_URL_REGEX[:user])).to be true
 
-        expect(described_class.match?(input_str: 'http://www.pinterest.com/alisaua/',
+        expect(described_class.match?(input_str: 'http://www.pinterest.de/alisaua/',
                                       regex: SocialsRegex::Regexes::PINTEREST_URL_REGEX[:user])).to be true
 
       end
