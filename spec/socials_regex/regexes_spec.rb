@@ -477,4 +477,16 @@ RSpec.describe SocialsRegex::Regexes do
     end
   end
 
+  context SocialsRegex::Platforms::PLATFORM_PINTEREST do
+    context 'with user validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://it.pinterest.com/brouwersanitairnl/',
+                                      regex: SocialsRegex::Regexes::PINTEREST_URL_REGEX[:user])).to be true
+
+        expect(described_class.match?(input_str: 'http://www.pinterest.com/alisaua/',
+                                      regex: SocialsRegex::Regexes::PINTEREST_URL_REGEX[:user])).to be true
+
+      end
+    end
+  end
 end

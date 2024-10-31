@@ -24,6 +24,7 @@ module SocialsRegex
     PLATFORM_YELP: string
     PLATFORM_YOUTUBE: string
     PLATFORM_TIKTOK: string
+    PLATFORM_PINTEREST: string
 
     def self.all: ->  Array[Symbol]
 

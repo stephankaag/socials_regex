@@ -27,7 +27,8 @@ module SocialsRegex
       "#{SocialsRegex::Platforms::PLATFORM_LINKEDIN}": SocialsRegex::Regexes::LINKEDIN_URL_REGEX,
       "#{SocialsRegex::Platforms::PLATFORM_GITHUB}": SocialsRegex::Regexes::GITHUB_URL_REGEX,
       "#{SocialsRegex::Platforms::PLATFORM_FACEBOOK}": SocialsRegex::Regexes::FACEBOOK_URL_REGEX,
-      "#{SocialsRegex::Platforms::PLATFORM_TIKTOK}": SocialsRegex::Regexes::TIKTOK_URL_REGEX
+      "#{SocialsRegex::Platforms::PLATFORM_TIKTOK}": SocialsRegex::Regexes::TIKTOK_URL_REGEX,
+      "#{SocialsRegex::Platforms::PLATFORM_PINTEREST}": SocialsRegex::Regexes::PINTEREST_URL_REGEX
     }.freeze
 
     ERROR_MSG_UNKNOWN_PLATFORM = "Unknown platform, expected one of #{PLATFORMS_REGEX.keys}"

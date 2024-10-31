@@ -27,6 +27,7 @@ module SocialsRegex
     PLATFORM_WHATSAPP = 'whatsapp'
     PLATFORM_YELP = 'yelp'
     PLATFORM_TIKTOK = 'tiktok'
+    PLATFORM_PINTEREST = 'pinterest'
 
     def self.all
       Platforms.constants
@@ -235,7 +236,14 @@ module SocialsRegex
       # Allowed for usernames are letters, numbers, underscores, and periods.
       # http://tiktok.com/@talaatmagdyx
       # https://tiktok.com/@talaatmagdyx
-      user: %r{(?:https?:)?//(?:[A-Za-z]+\.)?(?:tiktok)\.com/@(?<username>[A-Za-z0-9_.]+)/?}
+      user: %r{(?:https?:)?//(?:[A-Za-z]+\.)?tiktok\.com/@(?<username>[A-Za-z0-9_.]+)/?}
+    }.freeze
+
+    PINTEREST_URL_REGEX = {
+      # Allowed for usernames are letters, numbers, underscores.
+      # http://pinterest.com/talaatmagdyx
+      # https://it.pinterest.com/talaatmagdyx
+      user: %r{(?:https?:)?//(?:[A-Za-z]+\.)?pinterest\.com/(?<username>[A-Za-z0-9_]+)/?}
     }.freeze
 
     def self.match?(input_str:, regex:)
