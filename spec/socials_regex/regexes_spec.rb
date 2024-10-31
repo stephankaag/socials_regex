@@ -348,6 +348,11 @@ RSpec.describe SocialsRegex::Regexes do
         expect(described_class.match?(input_str: 'https://twitter.com/karllorey/status/1259924082067374088',
                                       regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:status])).to be true
       end
+      
+      it 'Valid X' do
+        expect(described_class.match?(input_str: 'https://x.com/karllorey/status/1259924082067374088',
+                                      regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:status])).to be true
+      end
     end
 
     context 'with user validate' do
@@ -356,8 +361,18 @@ RSpec.describe SocialsRegex::Regexes do
                                       regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:user])).to be true
       end
 
+      it 'Valid with http x' do
+        expect(described_class.match?(input_str: 'http://x.com/talaatmagdyx',
+                                      regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:user])).to be true
+      end
+
       it 'Valid with https' do
         expect(described_class.match?(input_str: 'https://twitter.com/talaatmagdyx',
+                                      regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:user])).to be true
+      end
+
+      it 'Valid with https x' do
+        expect(described_class.match?(input_str: 'https://x.com/talaatmagdyx',
                                       regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:user])).to be true
       end
     end

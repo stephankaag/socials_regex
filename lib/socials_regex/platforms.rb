@@ -186,12 +186,12 @@ module SocialsRegex
 
     TWITTER_URL_REGEX = {
       # https://twitter.com/karllorey/status/1259924082067374088
-      status: %r{(?:https?:)?//(?:[A-Za-z]+\.)?twitter\.com/@?(?<username>[A-Za-z0-9_]+)/status/(?<tweet_id>[0-9]+)/?},
+      status: %r{(?:https?:)?//(?:[A-Za-z]+\.)?(?:twitter|x)\.com/@?(?<username>[A-Za-z0-9_]+)/status/(?<tweet_id>[0-9]+)/?},
       # Allowed for usernames are alphanumeric characters and underscores.
       # http://twitter.com/@talaatmagdyx
       # http://twitter.com/talaatmagdyx
       # https://twitter.com/talaatmagdyx
-      user: %r{(?:https?:)?//(?:[A-Za-z]+\.)?twitter\.com/@?(?!home|share|privacy|tos)(?<username>[A-Za-z0-9_]+)/?}
+      user: %r{(?:https?:)?//(?:[A-Za-z]+\.)?(?:twitter|x)\.com/@?(?!home|share|privacy|tos)(?<username>[A-Za-z0-9_]+)/?}
     }.freeze
 
     VIMEO_URL_REGEX = {
