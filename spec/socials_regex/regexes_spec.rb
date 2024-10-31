@@ -453,4 +453,28 @@ RSpec.describe SocialsRegex::Regexes do
       end
     end
   end
+
+  context SocialsRegex::Platforms::PLATFORM_TIKTOK do
+    context 'with user validate' do
+      it 'Valid with http' do
+        expect(described_class.match?(input_str: 'http://www.tiktok.com/@currentbody',
+                                      regex: SocialsRegex::Regexes::TIKTOK_URL_REGEX[:user])).to be true
+
+        expect(described_class.match?(input_str: 'http://tiktok.com/@currentbody',
+                                      regex: SocialsRegex::Regexes::TIKTOK_URL_REGEX[:user])).to be true
+
+      end
+
+      it 'Valid with https' do
+        expect(described_class.match?(input_str: 'https://www.tiktok.com/@currentbody',
+                                      regex: SocialsRegex::Regexes::TIKTOK_URL_REGEX[:user])).to be true
+
+        expect(described_class.match?(input_str: 'https://tiktok.com/@current.body',
+                                      regex: SocialsRegex::Regexes::TIKTOK_URL_REGEX[:user])).to be true
+
+      end
+
+    end
+  end
+
 end

@@ -26,6 +26,7 @@ module SocialsRegex
     PLATFORM_STACKEXCHANGE_NETWORK = 'stackexchange network'
     PLATFORM_WHATSAPP = 'whatsapp'
     PLATFORM_YELP = 'yelp'
+    PLATFORM_TIKTOK = 'tiktok'
 
     def self.all
       Platforms.constants
@@ -228,6 +229,13 @@ module SocialsRegex
     YELP_URL_REGEX = {
       # https://www.yelp.com/biz/example-business
       company: %r{(?:https?://)?(?:www\.)?yelp\.com/biz/(?<company>[A-Za-z0-9_-]+)}
+    }.freeze
+
+    TIKTOK_URL_REGEX = {
+      # Allowed for usernames are letters, numbers, underscores, and periods.
+      # http://tiktok.com/@talaatmagdyx
+      # https://tiktok.com/@talaatmagdyx
+      user: %r{(?:https?:)?//(?:[A-Za-z]+\.)?(?:tiktok)\.com/@(?<username>[A-Za-z0-9_.]+)/?}
     }.freeze
 
     def self.match?(input_str:, regex:)
